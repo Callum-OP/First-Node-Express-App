@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\views"
   ],
-  "SelectedNode": "\\C:\\Users\\callu\\Source\\Repos\\To-Do-List-App",
+  "SelectedNode": "\\views\\index.pug",
   "PreviewInSolutionExplorer": false
 }
