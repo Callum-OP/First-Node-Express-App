@@ -28,8 +28,8 @@ app.get('/', function(req, res, next){
 });
 
 app.post('/', function(req, res, next){
-
-	res.send(req.body);
+	var message = req.body;
+	res.send('Task:',message.task);
 
 });
 
