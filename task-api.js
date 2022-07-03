@@ -14,8 +14,8 @@ let tasks = [{
     "description": "Learn node.js and make an app",
 },
 {
-    "title": "Speaking",
-    "description": "Speak to family members",
+    "title": "Walking",
+    "description": "Go for a walk in the woods",
 }];
 
 app.use(cors());
@@ -33,7 +33,7 @@ app.post('/task', (req, res) => {
     res.send('Task is added to the database');
 });
 
-app.get('/task', (req, res) => {
+app.get('/tasks', (req, res) => {
     res.json(tasks);
 });
 
