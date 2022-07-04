@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express()
 const port = 3000
 
+//list of example tasks
 let tasks = [{
     "title": "Shopping",
     "description": "Go to the shop and buy milk",
@@ -23,6 +24,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//adding new task
 app.post('/task', (req, res) => {
     const task = req.body;
 
@@ -33,10 +35,12 @@ app.post('/task', (req, res) => {
     res.send('Task is added to the database');
 });
 
+//showing all tasks
 app.get('/tasks', (req, res) => {
     res.json(tasks);
 });
 
+//showing specific task
 app.get('/task/:title', (req, res) => {
     // reading title from the URL
     const title = req.params.title;
@@ -49,10 +53,10 @@ app.get('/task/:title', (req, res) => {
         }
     }
 
-    // sending 404 when not found something is a good practice
     res.status(404).send('Task not found');
 });
 
+//deleting specific task
 app.delete('/task/:title', (req, res) => {
     // reading title from the URL
     const title = req.params.title;
@@ -66,10 +70,10 @@ app.delete('/task/:title', (req, res) => {
         return false;
     });
 
-    // sending 404 when not found something is a good practice
     res.send('Task is deleted');
 });
 
+//editing a task
 app.post('/task/:title', (req, res) => {
     // reading title from the URL
     const title = req.params.title;
@@ -84,7 +88,6 @@ app.post('/task/:title', (req, res) => {
         }
     }
 
-    // sending 404 when not found something is a good practice
     res.send('Task is edited');
 });
 
